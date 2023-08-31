@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from "@react-navigation/native";
+import logoImage from '../../../imagens/logo.png';
 
 export default function Welcome() {
     const navigation = useNavigation();
@@ -11,7 +12,7 @@ export default function Welcome() {
             <View style={styles.containerLogo}>
                 <Animatable.Image
                     animation="flipInX"
-                    source={require('../../../imagens/logo.png')}
+                    source={logoImage}                    
                     resizeMode="contain"
                     style={styles.logo}
                 />
