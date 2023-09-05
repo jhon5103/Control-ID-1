@@ -1,25 +1,44 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet,TextInput, TouchableOpacity } from "react-native";
 import * as Animatable from 'react-native-animatable';
+import { useNavigation } from "@react-navigation/native";
 import {Ionicons} from '@expo/vector-icons';
+import styles from './styles'
 
 
 export default function Login(){
+  const navigation = useNavigation();
 
   const [login, setLogin] = useState("");
   const [senha, setSenha] = useState("");
   const [pressed, setPressed] = useState(false);
   const [mostrarSenha, setMostrarSenha] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null)
  /* const toggleMostrarSenha = () => {
     setMostrarSenha(!mostrarSenha);
   };*/
   function handleSingIn(){
     if(login===''|| senha===''){
-      window.alert("Prencha os campos!")
+      setErrorMessage("campo obrigatório*")
       return;
     }
+    setErrorMessage(null)
+    verifi()
     
   }
+  function verifi(){
+    if(login==='admin'|| senha=='admin'){
+      window.alert("Login realizado")
+      
+    }
+
+    
+  }
+  function registrar(){
+    
+  }
+
+  
 
     return(
         <View style={styles.container}>
@@ -32,12 +51,14 @@ export default function Login(){
             <TextInput style={styles.inputLogin} placeholder='Login'
             value={login} onChangeText={(texto)=> setLogin(texto)}
             />
+            <Text style={styles.errorMessage}>{errorMessage}</Text>
             
               <View style={styles.eyeContainer}>
                 <TextInput
                  style={styles.inputSenha} placeholder='Senha' secureTextEntry={mostrarSenha} 
                  value={senha} onChangeText={(texto)=> setSenha(texto)}
-                />               
+                />
+                <Text style={styles.errorMessage}>{errorMessage}</Text>               
                 
                 <TouchableOpacity style={styles.eye}  onPress={()=>setMostrarSenha(!mostrarSenha)}>
                   { mostrarSenha? 
@@ -53,12 +74,14 @@ export default function Login(){
 
               <TouchableOpacity 
                 style={styles.buttonAcessar}
-                onPress={handleSingIn}>
+                onPress={handleSingIn}
+                onChangeText={verifi}
+                >
 
                <Text style={styles.buttonTextAcessar}>Acessar</Text>
               </TouchableOpacity>
 
-             <TouchableOpacity style={styles.buttonRegister}>
+             <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Register')}>
                 <Text style={styles.buttonTextRegister}>Ainda não tem uma conta? Clique aqui</Text>
              </TouchableOpacity>
 
@@ -69,84 +92,3 @@ export default function Login(){
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#FCFAD4',
-    },
-    containerBemvindo:{
-      marginTop:'30%',
-      marginBottom:'30%',
-      marginStart:'5%'
-    },
-    title:{
-      fontSize:35,
-      fontWeight:'bold',
-      color:'#2D063B'
-    },
-    containerForm:{ 
-      backgroundColor:'#fff',
-      flex:1,
-      borderTopLeftRadius:25,
-      borderTopRightRadius:25,
-      paddingStart:'5%',
-      paddingEnd:'5%'
-    },
-    inputLogin:{
-      fontSize:20,
-      fontWeight:'bold',
-      marginTop:20,
-      borderBottomWidth:1,
-      height:50,
-      marginBottom:16,
-      
-    },
-    inputSenha:{
-      color:'#2D063B',
-      fontWeight:'bold',
-      width:'90%',
-      fontSize:20,
-
-    },
-    buttonAcessar:{
-      backgroundColor: '#2D063B',
-      borderRadius:4,
-      paddingVertical:8,
-      marginTop:20,
-      alignItems:'center',
-      justifyContent:'center',
-      width:'100%'
-    },
-    buttonTextAcessar:{
-      color:'#Fff',
-      fontWeight:'900',
-      fontSize:18
-
-    },
-    buttonRegister:{
-      marginTop:14,
-      alignSelf:'center',
-      color:'#2D063B'
-    },
-    buttonTextRegister:{
-      color:'#a1a1a1'
-    },
-    eyeContainer:{
-      flexDirection:'row',
-      with:'100%',
-      fontSize:20,
-      fontWeight:'bold',
-      marginTop:20,
-      borderBottomWidth:1,
-      height:50,
-      marginBottom:16,
-     // backgroundColor:'black'
-    },
-    eye:{
-     // backgroundColor:'red',
-      width:'13%',
-      height:50,
-      justifyContent:'center',
-      alignItems:'center'
-    }
-  });
