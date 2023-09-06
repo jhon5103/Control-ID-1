@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
         
       },
       inputSenha:{
-        color:'#2D063B',
         fontWeight:'bold',
         width:'90%',
         fontSize:20,
