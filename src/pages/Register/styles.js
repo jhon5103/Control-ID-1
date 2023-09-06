@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         marginTop: 35,
         borderBottomWidth: 1,
         borderBottomColor: '#2D063B',
-        marginBottom: 20,
+        marginBottom: 30,
         fontWeight: "bold",
         fontSize: 20,
         paddingHorizontal: 10,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     inputSenha: {
         borderBottomWidth: 1,
         borderBottomColor: '#2D063B',
-        marginBottom: 20,
+        marginBottom: 30,
         fontSize: 20,
         paddingHorizontal: 10,
         fontWeight: "bold",
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#2D063B',
         borderRadius:4,
         paddingVertical:8,
-        marginTop:20,
+        marginTop:18,
         alignItems:'center',
         justifyContent:'center',
         width:'100%'
@@ -61,6 +61,9 @@ const styles = StyleSheet.create({
         marginTop:14,
         alignSelf:'center',
         color:'#2D063B'
+    },
+    buttonTextGoLogin:{
+        color:'#a1a1a1'
     }
 })
 

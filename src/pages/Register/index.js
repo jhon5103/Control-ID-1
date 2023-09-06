@@ -66,10 +66,12 @@ export default function Register() {
                     <Text style={styles.buttonTextAcessar}>Cadastrar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Login')}>
-                    <Text style={styles.buttonTextRegister}>Já tem uma conta? Faça login</Text>
+                <TouchableOpacity style={styles.buttonGoLogin} onPress={() => navigation.navigate('Login')}>
+                    <Text style={styles.buttonTextGoLogin}>Já tem uma conta? Faça login</Text>
                 </TouchableOpacity>
+                
             </Animatable.View>
+            
         </View>
     );
 }
