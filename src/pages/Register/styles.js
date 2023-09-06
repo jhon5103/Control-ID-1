@@ -56,7 +56,12 @@ const styles = StyleSheet.create({
         color:'#Fff',
         fontWeight:'900',
         fontSize:18
-    }  
+    },
+    buttonGoLogin:{
+        marginTop:14,
+        alignSelf:'center',
+        color:'#2D063B'
+    }
 })
 
 export default styles

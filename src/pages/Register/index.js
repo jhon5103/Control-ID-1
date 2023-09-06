@@ -3,9 +3,11 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-nativ
 import * as Animatable from 'react-native-animatable';
 import { Ionicons } from '@expo/vector-icons';
 import styles from "./styles";
-
+import { useNavigation } from "@react-navigation/native";
 
 export default function Register() {
+    const navigation = useNavigation();
+
     const [login, setLogin] = useState("");
     const [senha, setSenha] = useState("");
     const [confirmSenha, setConfirmSenha] = useState("");
@@ -64,7 +66,7 @@ export default function Register() {
                     <Text style={styles.buttonTextAcessar}>Cadastrar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonRegister}>
+                <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Login')}>
                     <Text style={styles.buttonTextRegister}>Já tem uma conta? Faça login</Text>
                 </TouchableOpacity>
             </Animatable.View>

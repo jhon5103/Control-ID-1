@@ -21,7 +21,9 @@ export default function Routes(){
             />
 
             <Stack.Screen
-            name="Register" component={Register}
+            name="Register" 
+            component={Register}
+            options={{ headerShown: false}}
             />
 
         </Stack.Navigator>
