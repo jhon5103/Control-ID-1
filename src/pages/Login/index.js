@@ -42,12 +42,12 @@ export default function Login(){
 
     return(
         <View style={styles.container}>
-          <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerBemvindo}>
+          <Animatable.View animation="fadeInLeft" delay={400} style={styles.containerBemvindo}>
             <Text style={styles.title}> Bem-vindo! </Text>
 
           </Animatable.View>   
 
-           <Animatable.View animation="fadeInUp" delay={500} style={styles.containerForm}>
+           <Animatable.View animation="fadeInUp" delay={400} style={styles.containerForm}>
             <TextInput style={styles.inputLogin} placeholder='Login'
               value={login} onChangeText={(texto)=> setLogin(texto)}
             />

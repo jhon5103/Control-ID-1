@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor:  "#FCFAD4", // Adicionei uma cor de fundo branca, mas você pode alterar
+        backgroundColor:  "#FCFAD4", 
     },
     containerBemvindo: {
         
@@ -23,26 +23,24 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 35,
         fontWeight: 'bold',
-        color: '#2D063B', // Você pode ajustar a cor
+        color: '#2D063B', 
     },
-    inputLogin: {
-        marginTop: 35,
-        borderBottomWidth: 1,
-        borderBottomColor: '#2D063B',
-        marginBottom: 30,
-        fontWeight: "bold",
-        fontSize: 20,
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-    },
-    inputSenha: {
-        borderBottomWidth: 1,
-        borderBottomColor: '#2D063B',
-        marginBottom: 30,
-        fontSize: 20,
-        paddingHorizontal: 10,
-        fontWeight: "bold",
-    },
+    inputLogin:{
+        fontSize:20,
+        fontWeight:'bold',
+        marginTop:20,
+        borderBottomWidth:1,
+        height:50,
+        marginBottom:16,
+        
+      },
+      inputSenha:{
+        color:'#2D063B',
+        fontWeight:'bold',
+        width:'90%',
+        fontSize:20,
+  
+      },
     buttonAcessar: {
         backgroundColor: '#2D063B',
         borderRadius:4,
@@ -64,7 +62,32 @@ const styles = StyleSheet.create({
     },
     buttonTextGoLogin:{
         color:'#a1a1a1'
-    }
+    },
+    eyeContainer:{
+        flexDirection:'row',
+        with:'100%',
+        fontSize:20,
+        fontWeight:'bold',
+        marginTop:20,
+        borderBottomWidth:1,
+        height:50,
+        marginBottom:16,
+       //backgroundColor:'black'
+    },
+    eye:{
+        // backgroundColor:'red',
+         width:'13%',
+         height:50,
+         justifyContent:'center',
+         alignItems:'center'
+       },
+       errorMessage: {
+        fontSize: 12,
+        color:"red",
+        fontWeight: "bold",
+        justifyContent:'flex-start'
+      }
+    
 })
 
 export default styles
