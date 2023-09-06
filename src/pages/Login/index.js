@@ -11,7 +11,7 @@ export default function Login(){
 
   const [login, setLogin] = useState("");
   const [senha, setSenha] = useState("");
-  const [pressed, setPressed] = useState(false);
+  //const [pressed, setPressed] = useState(false);
   const [mostrarSenha, setMostrarSenha] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null)
  /* const toggleMostrarSenha = () => {
@@ -49,7 +49,7 @@ export default function Login(){
 
            <Animatable.View animation="fadeInUp" delay={500} style={styles.containerForm}>
             <TextInput style={styles.inputLogin} placeholder='Login'
-            value={login} onChangeText={(texto)=> setLogin(texto)}
+              value={login} onChangeText={(texto)=> setLogin(texto)}
             />
             <Text style={styles.errorMessage}>{errorMessage}</Text>
             
@@ -58,19 +58,20 @@ export default function Login(){
                  style={styles.inputSenha} placeholder='Senha' secureTextEntry={mostrarSenha} 
                  value={senha} onChangeText={(texto)=> setSenha(texto)}
                 />
-                <Text style={styles.errorMessage}>{errorMessage}</Text>               
+                            
                 
                 <TouchableOpacity style={styles.eye}  onPress={()=>setMostrarSenha(!mostrarSenha)}>
                   { mostrarSenha? 
-                  <Ionicons name='eye' color='#2D063B' size={25}/>
-                  :
                   <Ionicons name='eye-off' color='#2D063B' size={25}/>
+                  :
+                  <Ionicons name='eye' color='#2D063B' size={25}/>
 
                   }
                   
                 </TouchableOpacity>
+                
               </View>
-             
+              <Text style={styles.errorMessage}>{errorMessage}</Text>   
 
               <TouchableOpacity 
                 style={styles.buttonAcessar}

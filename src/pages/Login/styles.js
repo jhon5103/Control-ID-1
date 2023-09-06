@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color:"red",
         fontWeight: "bold",
+        justifyContent:'flex-start'
       }
 
 })
