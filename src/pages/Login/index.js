@@ -82,7 +82,7 @@ export default function Login(){
                <Text style={styles.buttonTextAcessar}>Acessar</Text>
               </TouchableOpacity>
 
-             <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Register')}>
+             <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Dashboard')}>
                 <Text style={styles.buttonTextRegister}>Ainda não tem uma conta? Clique aqui</Text>
              </TouchableOpacity>
 
