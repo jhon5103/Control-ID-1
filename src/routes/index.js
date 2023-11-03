@@ -34,6 +34,7 @@ export default function Routes(){
             component={Register}
             options={{ headerShown: false}}
             />
+           
 
             <Stack.Screen
             name="registrarColab" 

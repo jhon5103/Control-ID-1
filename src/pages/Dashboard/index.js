@@ -12,7 +12,7 @@ const Dashboard = () => {
       <Text style={styles.heading}>Dashboard</Text>
       <View style={styles.containerCards}> 
       <View style={styles.card}>
-        <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Login')}>
+        <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Consulta')}>
             <Text style={styles.textCard}>Consulta de colaboradores</Text> 
         </TouchableOpacity>
       </View>
