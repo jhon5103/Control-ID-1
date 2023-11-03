@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         width:'90%',
         fontSize:20,
-  
       },
     buttonAcessar: {
         backgroundColor: '#2D063B',
