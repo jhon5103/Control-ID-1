@@ -4,8 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import * as Animatable from 'react-native-animatable';
 import { number } from 'yup';
 import styles from '../registrarColab/styles';
-import db from '../../../Database';
-
+import db from '../../services/sqlite/SQliteDatabase';
 export default function registrarColab() {
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
@@ -24,30 +23,15 @@ export default function registrarColab() {
   const [serieCarteira, setserieCarteira] = useState('');
   const [id, setId] = useState('');
 
-    const handleRegistro1 = () => {
-      // Aqui você pode adicionar a lógica para processar o registro
-      console.log(`Nome: ${nome}, Cargo: ${cargo}`);
-    };
-  
-    const handleRegistro = () => {
-      db.transaction(tx => {
-        tx.executeSql(
-          'INSERT INTO funcionarios (nome, cargo, cpf, rg, naturalidade, estadoCivil, sexo, tel, contato, dataNas, dataAdmissao, endereco, pis, nCarteira, serieCarteira) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-          [nome, cargo, cpf, rg, naturalidade, estadoCivil, sexo, tel, contato, dataNas, dataAdmissao, endereco, pis, nCarteira, serieCarteira],
-          (_, results) => {
-            console.log('Funcionário cadastrado com sucesso!');
-          },
-          error => {
-            console.error(error);
-          }
-        );
-      });
-    };
+
+ const handleRegistro = () => {
+    // Aqui você pode adicionar a lógica para processar o registro
+    console.log(`Nome: ${nome}, Cargo: ${cargo}`);
+  };
 
 
 
 
-  
   return (
       
     <ScrollView style={styles.container}>
