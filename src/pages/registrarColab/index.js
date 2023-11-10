@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import * as Animatable from 'react-native-animatable';
 import { number } from 'yup';
 import styles from '../registrarColab/styles';
-import db from '../../services/sqlite/SQliteDatabase';
+
 export default function registrarColab() {
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
