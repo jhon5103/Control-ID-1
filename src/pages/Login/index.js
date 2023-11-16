@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet,TextInput, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet,TextInput, TouchableOpacity, Alert } from "react-native";
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from "@react-navigation/native";
 import {Ionicons} from '@expo/vector-icons';
 import styles from './styles'
+import { DatabaseConnection } from '../../database/database'
+
+const db = DatabaseConnection.getConnection();
 
 
 export default function Login(){
   const navigation = useNavigation();
 
-  const [login, setLogin] = useState("");
+  const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [cpf, setCpf] = useState("")
   //const [pressed, setPressed] = useState(false);
   const [mostrarSenha, setMostrarSenha] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null)
@@ -18,7 +22,7 @@ export default function Login(){
     setMostrarSenha(!mostrarSenha);
   };*/
   function handleSingIn(){
-    if(login===''|| senha===''){
+    if(email===''|| senha===''){
       setErrorMessage("campo obrigatório*")
       return;
     }
@@ -27,17 +31,26 @@ export default function Login(){
     
   }
   function verifi(){
-    if(login==='admin'|| senha=='admin'){
-      window.alert("Login realizado")
-      
-    }
+    if(email==="admin" && senha ==="admin")
+      navigation.navigate("Dashboard")
+    db.transaction((tx) =>{
+      tx.executeSql(
+        'SELECT * FROM funcionarios WHERE email = ? AND senha = ?', [email, senha],
+        (_, { rows }) => {
+          if (rows.length > 0){
+            navigation.navigate('Dashboard')
+          }else {
+            console.log("Erro ao cadastrar")
+          }
+        },
+        (_, error) => {
+          console.error('Erro ao executar consulta SQL:', error)
+        }
+      )
+    })
 
     
   }
-  function registrar(){
-    
-  }
-
   
 
     return(
@@ -48,8 +61,8 @@ export default function Login(){
           </Animatable.View>   
 
            <Animatable.View animation="fadeInUp" delay={400} style={styles.containerForm}>
-            <TextInput style={styles.inputLogin} placeholder='Login'
-              value={login} onChangeText={(texto)=> setLogin(texto)}
+            <TextInput style={styles.inputLogin} placeholder='Email'
+              value={email} onChangeText={(texto)=> setEmail(texto)}
             />
             <Text style={styles.errorMessage}>{errorMessage}</Text>
             
@@ -82,7 +95,7 @@ export default function Login(){
                <Text style={styles.buttonTextAcessar}>Acessar</Text>
               </TouchableOpacity>
 
-             <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Dashboard')}>
+             <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Register')}>
                 <Text style={styles.buttonTextRegister}>Ainda não tem uma conta? Clique aqui</Text>
              </TouchableOpacity>
 

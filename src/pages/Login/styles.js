@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
       },
       buttonAcessar:{
         backgroundColor: '#2D063B',
-        borderRadius:4,
+        borderRadius:10,
         paddingVertical:8,
         marginTop:20,
         alignItems:'center',
@@ -59,7 +59,8 @@ const styles = StyleSheet.create({
         color:'#2D063B'
       },
       buttonTextRegister:{
-        color:'#a1a1a1'
+        color:'#a1a1a1',
+        textDecorationLine: 'underline'
       },
       eyeContainer:{
         flexDirection:'row',

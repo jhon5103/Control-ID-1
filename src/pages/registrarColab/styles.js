@@ -21,14 +21,16 @@ const styles = StyleSheet.create({
     input: {
       color:'#2D063B',
       height: 40,
+      fontSize: 15,
       borderColor:'#2D063B',
       borderWidth: 1,
+      borderRadius: 10,
       marginBottom: 16,
       paddingHorizontal: 8,
     },
     registrarButton:{
       backgroundColor: '#2D063B',
-      borderRadius:4,
+      borderRadius:10,
       paddingVertical:8,
       marginTop:10,
       alignItems:'center',
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
       color:'#FFF',
       textAlign:'center',
       fontWeight:'bold',
-      fontSize:18
+      fontSize:20
   
     }
   });

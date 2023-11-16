@@ -3,7 +3,7 @@ import Welcome from '../pages/welcome';
 import Login from '../pages/Login';
 import Register from "../pages/Register";
 import Dashboard from '../pages/Dashboard';
-import registrarColab from '../pages/registrarColab';
+import RegistrarColab from '../pages/RegistrarColab';
 import Consulta from '../pages/Consulta';
 
 const Stack = createNativeStackNavigator();
@@ -37,8 +37,13 @@ export default function Routes(){
            
 
             <Stack.Screen
-            name="registrarColab" 
-            component={registrarColab}
+            name="RegistrarColab" 
+            component={RegistrarColab}
+            options={{ headerShown: false}}
+            />
+            <Stack.Screen
+            name="Consulta" 
+            component={Consulta}
             options={{ headerShown: false}}
             />
 

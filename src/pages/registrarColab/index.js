@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { View, TouchableOpacity, TextInput,ScrollView,Text, Button, StyleSheet } from 'react-native';
-import { useNavigation } from "@react-navigation/native";
+import { View, TouchableOpacity, TextInput,ScrollView,Text } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { number } from 'yup';
-import styles from '../registrarColab/styles';
-import db from '../../services/sqlite/SQliteDatabase';
-export default function registrarColab() {
+import styles from './styles';
+export default function RegistrarColab() {
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
   const [cpf, setCPF] = useState('');

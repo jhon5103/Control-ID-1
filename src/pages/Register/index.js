@@ -1,24 +1,65 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import * as Animatable from 'react-native-animatable';
 import { Ionicons } from '@expo/vector-icons';
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
+import axios from 'axios'
+
+
 
 export default function Register() {
+
     const navigation = useNavigation();
     const handleGoToLogin = () => {
         navigation.navigate('Login');
       };
     const [mostrarSenha, setMostrarSenha] = useState(true);
-    const [login, setLogin] = useState("");
+    const [email, setEmail] = useState("");
+    const [cpf, setCpf] = useState("");
+    const [nome, setNome] = useState("");
+    const [telefone, setTelefone] = useState("");
     const [senha, setSenha] = useState("");
     const [confirmSenha, setConfirmSenha] = useState("");
     const [errorMessage, setErrorMessage] = useState(null);
+    const [cadastroSucesso, setCadastroSucesso] = useState(false);
+    const [dados, setDados] = useState([])
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('http://locahost:3000/clientes');
+          const data = response.json()
+          setDados(data)
+          console.log(dados)
+        }catch(err){
+          console.log("Error")
+        }
+      }
+      ;
+      fetchData()
+    }, []); 
+
+    /*useEffect(() => {
+        const db = DatabaseConnection.getConnection();
+        db.transaction((tx) => {
+          tx.executeSql(
+            'CREATE TABLE IF NOT EXISTS funcionarios (cpf TEXT PRIMARY KEY, email TEXT, nome TEXT NOT NULL, telefone TEXT, senha TEXT NOT NULL)',
+            [],
+            () => {
+              console.log('Tabela "users" criada com sucesso.');
+            },
+            (error) => {
+              console.error('Erro ao criar a tabela "users":', error);
+            }
+          );
+        });
+      }, []); */
+    
 
     const handleRegister = () => {
-        if(login === "" || senha === "" || confirmSenha === "") {
-            setErrorMessage("Todos os campos são obrigatórios");
+        if(cpf === "" ||nome === "" ||telefone === "" || senha === "" || confirmSenha === "") {
+            setErrorMessage("Os campos são obrigatórios");
             return;
         }
         if(senha !== confirmSenha) {
@@ -27,8 +68,27 @@ export default function Register() {
         }
 
         setErrorMessage(null);
-        // Aqui você pode adicionar a lógica de registro, por exemplo, chamar uma API.
-        alert("Registrado com sucesso!"); 
+        const db = DatabaseConnection.getConnection();
+
+        /*db.transaction((tx) => {
+          tx.executeSql(
+            'INSERT INTO funcionarios (cpf, email, nome, telefone, senha) VALUES (?, ?, ?, ?, ?)',
+            [cpf, nome, email, telefone, senha],
+            (_, result) => {
+              console.log('usuário cadastro com sucesso!');
+              setCadastroSucesso(true);
+              setTimeout(() => {
+                setCadastroSucesso(false);
+                navigation.navigate('Login')
+              }, 3000);
+            },
+            (_, error) => {
+              console.error('Erro ao inserir o usuário', error)
+            }
+            )
+        })*/
+
+  
     };
 
     return(
@@ -40,9 +100,27 @@ export default function Register() {
             <Animatable.View animation="fadeInUp" delay={400} style={styles.containerForm}>
                 <TextInput 
                     style={styles.inputLogin} 
-                    placeholder='Login'
-                    value={login} 
-                    onChangeText={(texto)=> setLogin(texto)}
+                    placeholder='Nome'
+                    value={nome} 
+                    onChangeText={(texto)=> setNome(texto)}
+                />
+                <TextInput 
+                    style={styles.inputLogin} 
+                    placeholder='Email'
+                    value={email} 
+                    onChangeText={(texto)=> setEmail(texto)}
+                />
+                <TextInput 
+                    style={styles.inputLogin} 
+                    placeholder='cpf'
+                    value={cpf} 
+                    onChangeText={(texto)=> setCpf(texto)}
+                />
+                <TextInput 
+                    style={styles.inputLogin} 
+                    placeholder='Telefone'
+                    value={telefone} 
+                    onChangeText={(texto)=> setTelefone(texto)}
                 />
                 
                 
