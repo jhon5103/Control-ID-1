@@ -3,6 +3,9 @@ import { View, TouchableOpacity, TextInput,ScrollView,Text } from 'react-native'
 import * as Animatable from 'react-native-animatable';
 import { number } from 'yup';
 import styles from './styles';
+import { useNavigation } from "@react-navigation/native";
+import {Ionicons} from '@expo/vector-icons';
+
 export default function RegistrarColab() {
 
   const [nome, setNome] = useState('');
@@ -27,6 +30,7 @@ export default function RegistrarColab() {
     // Aqui você pode adicionar a lógica para processar o registro
     console.log(`Nome: ${nome}, Cargo: ${cargo}`);
   };
+  const navigation = useNavigation();
 
 
 
@@ -34,6 +38,12 @@ export default function RegistrarColab() {
   return (
       
     <ScrollView style={styles.container}>
+        <Ionicons style={styles.icone}
+          name="chevron-back"
+          size={40}
+          color="#2D063B"
+          onPress={() => {navigation.navigate("Dashboard")}}
+        />
       <Animatable.View animation="fadeInLeft" delay={400} style={styles.space}>
         <Text style={styles.textSpace}>Digite os dados para cadastrar o colaborador!</Text>
       </Animatable.View> 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
 import * as Animatable from 'react-native-animatable';
 import { Ionicons } from '@expo/vector-icons';
 import styles from "./styles";
@@ -93,10 +93,11 @@ export default function Register() {
 
     return(
         <View style={styles.container}>
+          
             <Animatable.View animation="fadeInLeft" delay={400} style={styles.containerBemvindo}>
                 <Text style={styles.title}> Cadastre-se! </Text>
             </Animatable.View>   
-
+            <ScrollView>
             <Animatable.View animation="fadeInUp" delay={400} style={styles.containerForm}>
                 <TextInput 
                     style={styles.inputLogin} 
@@ -112,7 +113,7 @@ export default function Register() {
                 />
                 <TextInput 
                     style={styles.inputLogin} 
-                    placeholder='cpf'
+                    placeholder='CPF'
                     value={cpf} 
                     onChangeText={(texto)=> setCpf(texto)}
                 />
@@ -183,7 +184,7 @@ export default function Register() {
                 </TouchableOpacity>
 
             </Animatable.View>
-            
+            </ScrollView>
         </View>
     );
 }

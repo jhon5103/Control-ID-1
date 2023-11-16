@@ -3,15 +3,16 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      padding: 16,
+      padding: 10,
       backgroundColor:'#FCFAD4'
     },
     heading: {  
       color:'#2D063B',  
-      marginTop: '30%',
-      fontSize: 25,
+      marginTop: '19%',
+
+      fontSize: 40,
       fontWeight: 'bold',
-      marginBottom: 10,
+      marginBottom: '15%',
     },
     containerCards:{
       marginTop:'20%'            
@@ -30,6 +31,10 @@ const styles = StyleSheet.create({
     textCard:{
       color:'#fff',
       fontWeight:'bold'
+    },
+    containerIcone:{
+      marginTop:'6%',
+
     }
   })
 

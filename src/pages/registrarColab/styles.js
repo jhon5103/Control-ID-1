@@ -9,14 +9,20 @@ const styles = StyleSheet.create({
   
     },
     space:{
-      marginTop:'30%',
-      marginBottom:'25%',
+      marginTop:'15%',
+      marginBottom:'18%',
     },
     textSpace:{
       fontSize:30,
       fontWeight:'bold',
       color:'#2D063B',
       
+    },
+    icone:{
+      flexDirection: "row",
+      justifyContent: "space-between",
+      color:'#2D063B',
+      marginTop:'10%'
     },
     input: {
       color:'#2D063B',
@@ -27,6 +33,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       marginBottom: 16,
       paddingHorizontal: 8,
+      backgroundColor:'#fff'
     },
     registrarButton:{
       backgroundColor: '#2D063B',

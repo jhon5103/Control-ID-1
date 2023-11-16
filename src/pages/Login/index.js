@@ -54,8 +54,17 @@ export default function Login(){
   
 
     return(
+      
         <View style={styles.container}>
+            <Ionicons style={styles.icone}
+            name="chevron-back"
+            size={40}
+            color="#2D063B"
+            onPress={() => {navigation.navigate("Welcome")}}
+          />
+
           <Animatable.View animation="fadeInLeft" delay={400} style={styles.containerBemvindo}>
+
             <Text style={styles.title}> Bem-vindo! </Text>
 
           </Animatable.View>   

@@ -5,8 +5,15 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FCFAD4',
       },
+      icone:{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        color:'#2D063B',
+        marginTop:'10%'
+
+      },
       containerBemvindo:{
-        marginTop:'30%',
+        marginTop:'15%',
         marginBottom:'30%',
         marginStart:'5%'
       },
