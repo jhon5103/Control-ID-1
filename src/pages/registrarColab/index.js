@@ -4,6 +4,7 @@ import * as Animatable from 'react-native-animatable';
 import { number } from 'yup';
 import styles from './styles';
 export default function RegistrarColab() {
+
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
   const [cpf, setCPF] = useState('');
@@ -141,6 +142,5 @@ export default function RegistrarColab() {
     </ScrollView>
   );
 }
-
 
 

@@ -14,9 +14,13 @@
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.13",
     "@react-navigation/stack": "^6.3.20",
+<<<<<<< HEAD
     "axios": "^1.6.2",
     "cors": "^2.8.5",
     "expo": "^49.0.16",
+=======
+    "expo": "^49.0.17",
+>>>>>>> f82ceb5c4799d2b3e21d4bffe69df991844fde9e
     "expo-sqlite": "~11.3.3",
     "expo-status-bar": "~1.2.0",
     "mongodb": "^6.2.0",
