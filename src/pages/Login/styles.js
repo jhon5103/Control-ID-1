@@ -5,8 +5,15 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FCFAD4',
       },
+      icone:{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        color:'#2D063B',
+        marginTop:'10%'
+
+      },
       containerBemvindo:{
-        marginTop:'30%',
+        marginTop:'15%',
         marginBottom:'30%',
         marginStart:'5%'
       },
@@ -40,7 +47,7 @@ const styles = StyleSheet.create({
       },
       buttonAcessar:{
         backgroundColor: '#2D063B',
-        borderRadius:4,
+        borderRadius:10,
         paddingVertical:8,
         marginTop:20,
         alignItems:'center',
@@ -59,7 +66,8 @@ const styles = StyleSheet.create({
         color:'#2D063B'
       },
       buttonTextRegister:{
-        color:'#a1a1a1'
+        color:'#a1a1a1',
+        textDecorationLine: 'underline'
       },
       eyeContainer:{
         flexDirection:'row',

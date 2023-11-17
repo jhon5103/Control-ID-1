@@ -41,7 +41,7 @@ const styles=StyleSheet.create({
         alignSelf:'center',
         width:'60%',
         paddingVertical: 8,
-        borderRadius: 50,
+        borderRadius: 10,
     },
     buttonText: {
         fontSize:18,

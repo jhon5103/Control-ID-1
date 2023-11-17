@@ -21,8 +21,7 @@ export default function Welcome() {
 
             <Animatable.View animation="fadeInUp" delay={600} style={styles.containerForm}>
                 
-                <Text style={styles.title}>Monitore os horários trabalhados seja onde for!</Text>
-                <Text style={styles.texto}>Faça o login para iniciarmos.</Text>
+                <Text style={styles.title}>Tenha todas as informações na palma da mão!</Text>
                 <TouchableOpacity
                 style={styles.button}
                 onPress={() => navigation.navigate('Login')}
