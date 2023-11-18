@@ -10,16 +10,43 @@ const styles = StyleSheet.create({
     flex: 1
 
   },
+<<<<<<< HEAD
+  pesquisar: {//barra de pesquisa
+=======
+<<<<<<< HEAD
   pesquisar: {//barra de pesquisa
     flexDirection: "row",
     backgroundColor:'#FCFAD4',
+    maxWidth:'98%',
+    color:'#2D063B',
+    position: 'absolute',  // Posicionamento absoluto
+    marginTop: '3%',
+    left: 0,
+    zIndex: 1,
+=======
+  cabecalho: {//barra de pesquisa
+>>>>>>> f249ea1bbf520bf4933e0aabbc944efddafa5e53
+    flexDirection: "row",
+    backgroundColor:'#FCFAD4',
+<<<<<<< HEAD
     marginTop:'3%',
     maxWidth:'98%',
+=======
+    marginTop:'0%',
+    padding:9,
+    maxWidth:'94%',
+    marginLeft:'3%'
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
+>>>>>>> f249ea1bbf520bf4933e0aabbc944efddafa5e53
   },
   containerDados:{// container dos dados
       flex: 1,
       padding: 20,
+<<<<<<< HEAD
+      marginTop:'30%',
+=======
       marginTop:'10%',
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
 
   },
   input: {
@@ -45,8 +72,14 @@ const styles = StyleSheet.create({
   itemText: {
     color: '#fff',
     fontWeight: 'bold',
+<<<<<<< HEAD
+    fontSize: 16,
+    padding: 5,
+
+
   },
   lixeira:{
+<<<<<<< HEAD
     flexDirection: 'row',
     justifyContent: 'space-between',
    // alignItems: 'center',
@@ -55,6 +88,26 @@ const styles = StyleSheet.create({
     marginLeft:'5%',
     marginRight:'5%',
   },
+=======
+    //backgroundColor: '#2D063B',
+    position: 'absolute',  // Posicionamento absoluto
+    left:'5%',
+    bottom: '10%', // Ajuste aqui para posicionar abaixo do item
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    flexDirection: 'row',
+
+
+  },
+  containerPlus:{
+   marginLeft:'30%',
+  //backgroundColor:'black'
+    
+  }
+=======
+  },
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
+>>>>>>> f249ea1bbf520bf4933e0aabbc944efddafa5e53
   });
   
 

@@ -5,6 +5,22 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FCFAD4',
       },
+<<<<<<< HEAD
+      cabecalho:{
+        color:'#2D063B',
+        marginTop:'3%',
+        position: 'absolute',  // Posicionamento absoluto
+        left: 0,
+        right: 0,
+        zIndex: 1,
+      },
+      icone: {
+        marginTop: '10%',  // Ajuste de margem
+        // ... outros estilos
+      },
+      containerBemvindo:{
+        marginTop:'45%',
+=======
       icone:{
         color:'#2D063B',
         marginTop: '10%',  // Ajuste de margem
@@ -18,7 +34,12 @@ const styles = StyleSheet.create({
         zIndex: 1,
       },
       containerBemvindo:{
+<<<<<<< HEAD
         marginTop:'40%',
+=======
+        marginTop:'15%',
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
+>>>>>>> f249ea1bbf520bf4933e0aabbc944efddafa5e53
         marginBottom:'30%',
         marginStart:'5%'
         
@@ -28,6 +49,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         color:'#2D063B'
       },
+
       containerForm:{ 
         backgroundColor:'#fff',
         flex:1,
