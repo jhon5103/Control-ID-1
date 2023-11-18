@@ -3,12 +3,17 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from 'react-native-vector-icons'; // Importe o Ionicons
 
+<<<<<<< HEAD
 import styles from './styles';
+=======
+import styles from '../Dashboard/styles';
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
 
 const Dashboard = () => {
     const navigation = useNavigation();
 
     return (
+<<<<<<< HEAD
         
        
 
@@ -22,6 +27,20 @@ const Dashboard = () => {
                             onPress={() => {navigation.navigate("Login")}}
                         />
                 </View>
+=======
+        <View style={styles.container}>
+          <View style={styles.containerIcone}>
+          <Ionicons
+                style={styles.icone}
+                name="chevron-back"
+                size={40}
+                color="#2D063B"
+                onPress={() => { navigation.navigate("Login") }}
+            />
+          </View>
+
+            <View style={styles.container}>
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
                 <Text style={styles.heading}>Dashboard</Text>
                 <View style={styles.containerCards}>
                     <View style={styles.card}>
@@ -41,7 +60,11 @@ const Dashboard = () => {
                     </View>
                 </View>
             </View>
+<<<<<<< HEAD
         
+=======
+        </View>
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
     );
 };
 

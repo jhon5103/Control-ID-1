@@ -4,7 +4,11 @@ import * as Animatable from 'react-native-animatable';
 import { Ionicons } from '@expo/vector-icons';
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
+<<<<<<< HEAD
 import { DatabaseConnection } from '../../database/date'
+=======
+import axios from 'axios'
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
 
 
 
@@ -22,10 +26,17 @@ export default function Register() {
     const [senha, setSenha] = useState("");
     const [confirmSenha, setConfirmSenha] = useState("");
     const [errorMessage, setErrorMessage] = useState(null);
+<<<<<<< HEAD
     //const [cadastroSucesso, setCadastroSucesso] = useState(false);
     const [dados, setDados] = useState([])
 
     /*useEffect(() => {
+=======
+    const [cadastroSucesso, setCadastroSucesso] = useState(false);
+    const [dados, setDados] = useState([])
+
+    useEffect(() => {
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
       const fetchData = async () => {
         try {
           const response = await axios.get('http://locahost:3000/clientes');
@@ -38,6 +49,7 @@ export default function Register() {
       }
       ;
       fetchData()
+<<<<<<< HEAD
     }, []); */
 
     useEffect(() => {
@@ -59,6 +71,29 @@ export default function Register() {
 
     const handleRegister = () => {
         /*if(cpf === "" ||nome === "" ||telefone === "" || senha === "" || confirmSenha === "") {
+=======
+    }, []); 
+
+    /*useEffect(() => {
+        const db = DatabaseConnection.getConnection();
+        db.transaction((tx) => {
+          tx.executeSql(
+            'CREATE TABLE IF NOT EXISTS funcionarios (cpf TEXT PRIMARY KEY, email TEXT, nome TEXT NOT NULL, telefone TEXT, senha TEXT NOT NULL)',
+            [],
+            () => {
+              console.log('Tabela "users" criada com sucesso.');
+            },
+            (error) => {
+              console.error('Erro ao criar a tabela "users":', error);
+            }
+          );
+        });
+      }, []); */
+    
+
+    const handleRegister = () => {
+        if(cpf === "" ||nome === "" ||telefone === "" || senha === "" || confirmSenha === "") {
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
             setErrorMessage("Os campos são obrigatórios");
             return;
         }
@@ -67,6 +102,7 @@ export default function Register() {
             return;
         }
 
+<<<<<<< HEAD
         setErrorMessage(null);*/
         const db = DatabaseConnection.getConnection();
 
@@ -88,6 +124,28 @@ export default function Register() {
         );
         
         })
+=======
+        setErrorMessage(null);
+        const db = DatabaseConnection.getConnection();
+
+        /*db.transaction((tx) => {
+          tx.executeSql(
+            'INSERT INTO funcionarios (cpf, email, nome, telefone, senha) VALUES (?, ?, ?, ?, ?)',
+            [cpf, nome, email, telefone, senha],
+            (_, result) => {
+              console.log('usuário cadastro com sucesso!');
+              setCadastroSucesso(true);
+              setTimeout(() => {
+                setCadastroSucesso(false);
+                navigation.navigate('Login')
+              }, 3000);
+            },
+            (_, error) => {
+              console.error('Erro ao inserir o usuário', error)
+            }
+            )
+        })*/
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
 
   
     };
