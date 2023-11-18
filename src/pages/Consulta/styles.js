@@ -10,19 +10,20 @@ const styles = StyleSheet.create({
     flex: 1
 
   },
-  cabecalho: {//barra de pesquisa
+  pesquisar: {//barra de pesquisa
     flexDirection: "row",
-    justifyContent: "",
     backgroundColor:'#FCFAD4',
-    marginTop:'0%',
-    padding:9,
-    maxWidth:'94%',
-    marginLeft:'3%'
+    maxWidth:'98%',
+    color:'#2D063B',
+    position: 'absolute',  // Posicionamento absoluto
+    marginTop: '3%',
+    left: 0,
+    zIndex: 1,
   },
   containerDados:{// container dos dados
       flex: 1,
       padding: 20,
-      marginTop:'10%',
+      marginTop:'30%',
 
   },
   input: {
@@ -48,7 +49,27 @@ const styles = StyleSheet.create({
   itemText: {
     color: '#fff',
     fontWeight: 'bold',
+    fontSize: 16,
+    padding: 5,
+
+
   },
+  lixeira:{
+    //backgroundColor: '#2D063B',
+    position: 'absolute',  // Posicionamento absoluto
+    left:'5%',
+    bottom: '10%', // Ajuste aqui para posicionar abaixo do item
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    flexDirection: 'row',
+
+
+  },
+  containerPlus:{
+   marginLeft:'30%',
+  //backgroundColor:'black'
+    
+  }
   });
   
 

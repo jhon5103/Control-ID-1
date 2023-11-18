@@ -4,12 +4,12 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      paddingHorizontal: 16,
+      paddingHorizontal: 20,
       backgroundColor:'#FCFAD4'
   
     },
     space:{
-      marginTop:'15%',
+      marginTop:'10%',
       marginBottom:'18%',
     },
     textSpace:{
@@ -18,11 +18,9 @@ const styles = StyleSheet.create({
       color:'#2D063B',
       
     },
-    icone:{
-      flexDirection: "row",
-      justifyContent: "space-between",
+    cabecalho:{
       color:'#2D063B',
-      marginTop:'10%'
+      marginTop:'15%'
     },
     input: {
       color:'#2D063B',

@@ -5,15 +5,20 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FCFAD4',
       },
-      icone:{
-        flexDirection: "row",
-        justifyContent: "space-between",
+      cabecalho:{
         color:'#2D063B',
-        marginTop:'10%'
-
+        marginTop:'3%',
+        position: 'absolute',  // Posicionamento absoluto
+        left: 0,
+        right: 0,
+        zIndex: 1,
+      },
+      icone: {
+        marginTop: '10%',  // Ajuste de margem
+        // ... outros estilos
       },
       containerBemvindo:{
-        marginTop:'15%',
+        marginTop:'45%',
         marginBottom:'30%',
         marginStart:'5%'
       },
@@ -22,6 +27,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         color:'#2D063B'
       },
+
       containerForm:{ 
         backgroundColor:'#fff',
         flex:1,

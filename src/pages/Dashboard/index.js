@@ -9,18 +9,19 @@ const Dashboard = () => {
     const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
-          <View style={styles.containerIcone}>
-          <Ionicons
-                style={styles.icone}
-                name="chevron-back"
-                size={40}
-                color="#2D063B"
-                onPress={() => { navigation.navigate("Login") }}
-            />
-          </View>
+        
+       
 
+            
             <View style={styles.container}>
+                <View style={styles.cabecalho}>
+                        <Ionicons style={styles.icone}
+                            name="chevron-back"
+                            size={40}
+                            color="#2D063B"
+                            onPress={() => {navigation.navigate("Login")}}
+                        />
+                </View>
                 <Text style={styles.heading}>Dashboard</Text>
                 <View style={styles.containerCards}>
                     <View style={styles.card}>
@@ -40,7 +41,7 @@ const Dashboard = () => {
                     </View>
                 </View>
             </View>
-        </View>
+        
     );
 };
 

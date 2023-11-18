@@ -31,7 +31,8 @@ export default function RegistrarColab() {
     const db = DatabaseConnection.getConnection();
     db.transaction((tx) => {
       tx.executeSql(
-        'CREATE TABLE IF NOT EXISTS colaboradores (id PRIMARY KEY AUTOINCREMENT, cpf TEXT UNIQUE, nome TEXT NOT NULL, cargo TEXT, rg TEXT, naturalidade TEXT, estadoCivil TEXT, sexo TEXT, telefone TEXT, contato TEXT, dataNascimento TEXT, dataAdmissao TEXT, endereco TEXT, pis TEXT, serieCarteira TEXT)',
+        'CREATE TABLE IF NOT EXISTS colaboradores (id INTEGER PRIMARY KEY AUTOINCREMENT, cpf TEXT UNIQUE, nome TEXT NOT NULL, cargo TEXT, rg TEXT, naturalidade TEXT, estadoCivil TEXT, sexo TEXT, telefone TEXT, contato TEXT, dataNascimento TEXT, dataAdmissao TEXT, endereco TEXT, pis TEXT, serieCarteira TEXT)',
+        
         [],
         () => {
           console.log('Tabela "colaboradores" criada com sucesso.');
@@ -40,21 +41,25 @@ export default function RegistrarColab() {
           console.error('Erro ao criar a tabela "colaboradores":', error);
         }
       );
+
     });
   }, []);
   
 
 
  const handleRegistro = () => {
-  
+  if (!nome || !cargo || !cpf || !dataNascimento || !dataAdmissao || !endereco) {
+    console.error('Por favor, preencha todos os campos obrigatórios');
+    return;
+  }
   const db = DatabaseConnection.getConnection();
 
   db.transaction((tx) => {
     tx.executeSql(
-      'INSERT INTO colaboradores (cpf, nome, cargo, rg, naturalidade, estadoCivil, sexo, telefone, contato, dataNascimento, dataAdmissao, endereco, pis, serieCarteira) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      'INSERT INTO colaboradores (cpf, nome, cargo, rg, naturalidade, estadoCivil, sexo, telefone, contato, dataNascimento, dataAdmissao, endereco, pis, serieCarteira) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       [cpf, nome, cargo, rg, naturalidade, estadoCivil, sexo, telefone, contato, dataNascimento, dataAdmissao, endereco, pis, serieCarteira],
       () => {
-          console.log('funcionário cadastrado com sucesso!');
+          console.log('colaboradores cadastrado com sucesso!');
           //setCadastroSucesso(true);
           setTimeout(() => {
               //setCadastroSucesso(false);
@@ -62,7 +67,7 @@ export default function RegistrarColab() {
           }, 3000);
       },
       (_, error) => {
-          console.error('Erro ao inserir o usuário', error);
+          console.error('Erro ao inserir o colaborador', error);
       }
   );
   
@@ -75,13 +80,17 @@ export default function RegistrarColab() {
   return (
       
     <ScrollView style={styles.container}>
-        <Ionicons style={styles.icone}
+      <View style={styles.cabecalho}>
+      <Ionicons style={styles.icone}
           name="chevron-back"
           size={40}
           color="#2D063B"
           onPress={() => {navigation.navigate("Dashboard")}}
         />
+      </View>
+
       <Animatable.View animation="fadeInLeft" delay={400} style={styles.space}>
+
         <Text style={styles.textSpace}>Digite os dados para cadastrar o colaborador!</Text>
       </Animatable.View> 
       <TextInput
