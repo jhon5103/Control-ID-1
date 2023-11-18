@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FCFAD4',
       },
+<<<<<<< HEAD
       cabecalho:{
         color:'#2D063B',
         marginTop:'3%',
@@ -19,6 +20,17 @@ const styles = StyleSheet.create({
       },
       containerBemvindo:{
         marginTop:'45%',
+=======
+      icone:{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        color:'#2D063B',
+        marginTop:'10%'
+
+      },
+      containerBemvindo:{
+        marginTop:'15%',
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
         marginBottom:'30%',
         marginStart:'5%'
       },

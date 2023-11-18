@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+<<<<<<< HEAD
       backgroundColor:'#FCFAD4'
     },
     cabecalho:{
@@ -32,6 +33,25 @@ const styles = StyleSheet.create({
     card: {
       backgroundColor: '#2D063B',
       padding: 10,
+=======
+      padding: 10,
+      backgroundColor:'#FCFAD4'
+    },
+    heading: {  
+      color:'#2D063B',  
+      marginTop: '19%',
+
+      fontSize: 40,
+      fontWeight: 'bold',
+      marginBottom: '15%',
+    },
+    containerCards:{
+      marginTop:'20%'            
+    },
+    card: {
+      backgroundColor: '#2D063B',
+      padding: 16,
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
       marginBottom: 16,
       borderRadius: 8,
       shadowColor: '#000',
@@ -42,10 +62,19 @@ const styles = StyleSheet.create({
     },
     textCard:{
       color:'#fff',
+<<<<<<< HEAD
       fontWeight:'bold',
       padding:16      
     },
 
+=======
+      fontWeight:'bold'
+    },
+    containerIcone:{
+      marginTop:'6%',
+
+    }
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
   })
 
   export default styles

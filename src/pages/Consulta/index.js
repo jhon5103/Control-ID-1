@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import React, { useState, useEffect  } from 'react';
+=======
+import React, { useState, useMemo  } from 'react';
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
 import { View, TextInput, SafeAreaView, Text, FlatList } from 'react-native';
 import { Ionicons } from 'react-native-vector-icons';
 import styles from './styles';
 import { useNavigation } from "@react-navigation/native";
+<<<<<<< HEAD
 import { DatabaseConnection } from '../dataColab/databacolab'
 import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
 
@@ -30,10 +35,42 @@ const Consulta = () => {
   }
 
   
+=======
+
+
+const Consulta = () => {
+  const navigation = useNavigation();
+
+  // Exemplo de dados de funcionários (substitua isso com seus dados reais)
+  const funcionariosData = [
+    { id: '1',
+    nome: 'Jhonata Goncalves Antunes',
+    Cargo: "Desenvolvedor",
+    CPF: "123.456.789-00",
+    RG: "1234567",
+    Naturalidade: "São Paulo",
+    EstadoCivil: "Casado",
+    Sexo: "Masculino",
+    Telefone: "(11) 1234-5678",
+    },
+    { id: '2',
+    nome: "João da Silva",
+    Cargo: "Desenvolvedor",
+    CPF: "123.456.789-00",
+    RG: "1234567",
+    Naturalidade: "São Paulo",
+    EstadoCivil: "Casado",
+    Sexo: "Masculino",
+    Telefone: "(11) 1234-5678" },
+    { id: '3', nome: 'Funcionário 3' },
+    // Adicione mais dados conforme necessário
+  ];
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
 
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>Nome: {item.nome}</Text>
+<<<<<<< HEAD
       <Text style={styles.itemText}>Cargo: {item.cargo}</Text>
       <Text style={styles.itemText}>CPF: {item.cpf}</Text>
       <Text style={styles.itemText}>RG: {item.rg}</Text>
@@ -53,6 +90,19 @@ const Consulta = () => {
   );
 
   
+=======
+      <Text style={styles.itemText}>Cargo: {item.Cargo}</Text>
+      <Text style={styles.itemText}>CPF: {item.CPF}</Text>
+      <Text style={styles.itemText}>RG: {item.RG}</Text>
+      <Text style={styles.itemText}>Naturalidade: {item.Naturalidade}</Text>
+      <Text style={styles.itemText}>EstadoCivil: {item.EstadoCivil}</Text>
+      <Text style={styles.itemText}>Sexo: {item.Sexo}</Text>
+      <Text style={styles.itemText}>Telefone: {item.Telefone}</Text>
+    </View>
+  );
+
+  const [text, setText] = useState('');
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
 
   const handleSearchPress = () => {
     // Adicione a lógica de pesquisa aqui usando o valor em 'text'
@@ -60,6 +110,7 @@ const Consulta = () => {
     // Por exemplo, você pode filtrar os dados com base no texto e atualizar o estado da FlatList
   };
 
+<<<<<<< HEAD
   const handleDeleteItem = (itemId) => {
     const db = DatabaseConnection.getConnection();
     db.transaction((tx) => {
@@ -78,13 +129,24 @@ const Consulta = () => {
     <SafeAreaView style={styles.view}>
       <View style={styles.pesquisar}>
             <Ionicons
+=======
+  return (
+    <SafeAreaView style={styles.view}>
+      <View style={styles.containerIcon}>
+            <Ionicons style={styles.icone}
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
             name="chevron-back"
             size={40}
             color="#2D063B"
             onPress={() => {navigation.navigate("Dashboard")}}
           />
+<<<<<<< HEAD
       
       
+=======
+      </View>
+      <View style={styles.cabecalho}>
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
 
         <TextInput
           style={styles.input}
@@ -93,7 +155,10 @@ const Consulta = () => {
           autoCorrect={false}
           value={text}
           onChangeText={(value) => setText(value)}
+<<<<<<< HEAD
           
+=======
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
         />
         <Ionicons name="search" size={38} color="#2D063B" onPress={handleSearchPress} />
 
@@ -102,6 +167,7 @@ const Consulta = () => {
       <FlatList
         data={funcionariosData}
         renderItem={renderItem}
+<<<<<<< HEAD
         keyExtractor={(item) => item.id.toString()} // Use toString() para garantir que a chave seja uma string
         />
     </View>
@@ -125,6 +191,12 @@ const Consulta = () => {
   </View>
 
 </SafeAreaView>
+=======
+        keyExtractor={(item) => item.id}
+      />
+    </View>
+    </SafeAreaView>
+>>>>>>> 7047d4e9a704f4c215333dcbe478476c321c7270
     
     
   );
