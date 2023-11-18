@@ -10,14 +10,11 @@ const styles = StyleSheet.create({
     flex: 1
 
   },
-  cabecalho: {//barra de pesquisa
+  pesquisar: {//barra de pesquisa
     flexDirection: "row",
-    justifyContent: "",
     backgroundColor:'#FCFAD4',
-    marginTop:'0%',
-    padding:9,
-    maxWidth:'94%',
-    marginLeft:'3%'
+    marginTop:'3%',
+    maxWidth:'98%',
   },
   containerDados:{// container dos dados
       flex: 1,
@@ -48,6 +45,15 @@ const styles = StyleSheet.create({
   itemText: {
     color: '#fff',
     fontWeight: 'bold',
+  },
+  lixeira:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+   // alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    marginLeft:'5%',
+    marginRight:'5%',
   },
   });
   

@@ -4,6 +4,8 @@ import { Ionicons } from 'react-native-vector-icons';
 import styles from './styles';
 import { useNavigation } from "@react-navigation/native";
 import { DatabaseConnection } from '../dataColab/databacolab'
+import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
+import * as Animatable from 'react-native-animatable';
 
 const Consulta = () => {
   const navigation = useNavigation();
@@ -60,16 +62,15 @@ const Consulta = () => {
 
   return (
     <SafeAreaView style={styles.view}>
-      <View style={styles.containerIcon}>
-            <Ionicons style={styles.icone}
+
+      <Animatable.View animation="fadeInDown" delay={200} style={styles.pesquisar}>
+            <Ionicons 
             name="chevron-back"
             size={40}
             color="#2D063B"
             onPress={() => {navigation.navigate("Dashboard")}}
           />
-      </View>
-      <View style={styles.cabecalho}>
-
+      
         <TextInput
           style={styles.input}
           placeholder="Pesquisar"
@@ -77,18 +78,38 @@ const Consulta = () => {
           autoCorrect={false}
           value={text}
           onChangeText={(value) => setText(value)}
+          
         />
         <Ionicons name="search" size={38} color="#2D063B" onPress={handleSearchPress} />
+      </Animatable.View>
 
-      </View>
-      <View style={styles.containerDados}>
+      <Animatable.View animation="fadeInLeft" delay={250} style={styles.containerDados}>
       <FlatList
         data={funcionariosData}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
-    </View>
-    </SafeAreaView>
+        keyExtractor={(item) => item.id.toString()} // Use toString() para garantir que a chave seja uma string
+        />
+    </Animatable.View>
+    <Animatable.View animation="fadeInUp" delay={300} style={styles.lixeira}>
+
+    <MaterialIcons
+      name="delete"
+      size={60}
+      color="#2D063B"
+      style={styles.lixeiraIcon}
+      onPress={() => handleDeleteItem(item.id)}     
+       />
+    <FontAwesome
+      name="plus"
+      size={60}
+      color="#2D063B"
+      style={styles.containerPlus}
+      onPress={() => {navigation.navigate("RegistrarColab")}}
+
+    />
+  </Animatable.View>
+
+</SafeAreaView>
     
     
   );

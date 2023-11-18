@@ -75,15 +75,18 @@ export default function RegistrarColab() {
   return (
       
     <ScrollView style={styles.container}>
-        <Ionicons style={styles.icone}
-          name="chevron-back"
-          size={40}
-          color="#2D063B"
-          onPress={() => {navigation.navigate("Dashboard")}}
-        />
+            <View style={styles.pesquisar}>
+                <Ionicons style={styles.icone}
+                name="chevron-back"
+                size={40}
+                color="#2D063B"
+                onPress={() => {navigation.navigate("Dashboard")}}
+              />
+            </View>
       <Animatable.View animation="fadeInLeft" delay={400} style={styles.space}>
         <Text style={styles.textSpace}>Digite os dados para cadastrar o colaborador!</Text>
       </Animatable.View> 
+      <Animatable.View animation="fadeInLeft" delay={450} style={styles.form}>
       <TextInput
         style={styles.input}
         placeholder="Nome completo"
@@ -166,12 +169,7 @@ export default function RegistrarColab() {
         value={pis}
         onChangeText={text => setPis(text)}
       />
-       <TextInput
-        style={styles.input}
-        placeholder="Número da carteira de trabalho"
-        value={numeroCarteira}
-        onChangeText={text => setnumeroCarteira(text)}
-      />
+
 
        <TextInput
         style={styles.input}
@@ -179,12 +177,13 @@ export default function RegistrarColab() {
         value={serieCarteira}
         onChangeText={text => setserieCarteira(text)}
       />
-      
-      <View style={styles.registrarButton}>
+            <View style={styles.registrarButton}>
       <TouchableOpacity>
         <Text style={styles.registrarText} onPress={handleRegistro}>Registrar</Text>
       </TouchableOpacity>
       </View>
+      </Animatable.View>
+
 
     </ScrollView>
   );

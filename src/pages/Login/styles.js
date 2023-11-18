@@ -6,16 +6,22 @@ const styles = StyleSheet.create({
         backgroundColor: '#FCFAD4',
       },
       icone:{
-        flexDirection: "row",
-        justifyContent: "space-between",
         color:'#2D063B',
-        marginTop:'10%'
-
+        marginTop: '10%',  // Ajuste de margem
+      },
+      pesquisar:{
+       // flexDirection: 'row',
+        marginTop:'3%',
+        position: 'absolute',  // Posicionamento absoluto
+        left: 0,
+        right: 0,
+        zIndex: 1,
       },
       containerBemvindo:{
-        marginTop:'15%',
+        marginTop:'40%',
         marginBottom:'30%',
         marginStart:'5%'
+        
       },
       title:{
         fontSize:35,
